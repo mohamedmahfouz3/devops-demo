@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: web-service
 spec:
   type: NodePort
   selector:
@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 80
       targetPort: 3000
-      nodePort: 30080
+      nodePort: 30081

@@ -3,7 +3,8 @@ export default function Home() {
     <main style={{ fontFamily: "sans-serif", padding: 24 }}>
       <h1>devops-demo</h1>
       <p>Deployed through CI/CD.</p>
-      <p>Version: {process.env.APP_VERSION ?? "local"}</p>
+      <p>Release two is live.</p>
+      <p>hello Im mohamed</p>
     </main>
   );
 }

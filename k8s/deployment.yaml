@@ -22,10 +22,14 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: web
-          image: devops-demo:v1
+          image: devops-demo:v2
           imagePullPolicy: IfNotPresent
+
           ports:
             - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: web-config
           readinessProbe:
             httpGet:
               path: /api/health
