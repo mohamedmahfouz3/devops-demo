@@ -9,22 +9,7 @@ pipeline{
         disableConcurrentBuilds()
     }
     stages{
-        stage("Checkout"){
-            steps{
-                checkout scm
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========Checkout executed successfully========"
-                }
-                failure{
-                    echo "========Checkout executed failed========"
-                }
-            }
-        }
+        
          stage('Install Dependencies') {
             steps {
                 sh 'npm ci'
@@ -46,6 +31,11 @@ pipeline{
         stage('Test') {
             steps {
                 sh 'npm test'
+            }
+        }
+        stage{
+            steps{
+                sh 'npm run build'
             }
         }
     }
